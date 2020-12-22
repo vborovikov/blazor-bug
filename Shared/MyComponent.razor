@@ -1,0 +1,24 @@
+﻿@using BlazorApp2.Models
+
+<h3>MyComponent</h3>
+
+@code {
+    private MyTypeWithCast myProperty;
+
+    [Parameter]
+    public MyTypeWithCast MyProperty
+    {
+        get => this.myProperty;
+        set
+        {
+            if (!this.myProperty.Equals(value))
+            {
+                this.myProperty = value;
+                _ = this.MyPropertyChanged.InvokeAsync(this.myProperty);
+            }
+        }
+    }
+
+    [Parameter]
+    public EventCallback<MyTypeWithCast> MyPropertyChanged { get; set; }
+}
