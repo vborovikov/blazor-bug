@@ -39,7 +39,7 @@
         }
 
         // Comment the operator to make the app work again
-        //public static implicit operator string(MyTypeWithCast id) => id == default ? String.Empty : id.ToString();
+        public static implicit operator string(MyTypeWithCast id) => id == default ? String.Empty : id.ToString();
 
         public static bool operator ==(MyTypeWithCast left, MyTypeWithCast right)
         {
